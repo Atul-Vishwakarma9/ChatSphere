@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectWithRetry = () => {
-  mongoose.connect(process.env.CONN_STRING, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  mongoose.connect(process.env.CONN_STRING)  // ✅ Removed deprecated options
   .then(() => {
     console.log('✅ DB Connection Successful!');
   })
@@ -29,4 +26,3 @@ mongoose.connection.on('error', (err) => {
 });
 
 module.exports = mongoose.connection;
-
