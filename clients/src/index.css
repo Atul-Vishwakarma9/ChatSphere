@@ -1,0 +1,873 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  overflow-y: hidden;
+}
+
+
+/*******************************************************
+************* MODERN LOGIN & SIGNUP STYLES *************
+********************************************************/
+
+/* Background */
+.container-back-img {
+  background-image: url('./../public/images/quick-chat-app-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+}
+
+.container-back-color {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.75), rgba(155, 89, 182, 0.75));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.card_title {
+  text-align: center;
+  padding: 10px;
+}
+
+.card_title h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Form */
+.form input {
+  margin-bottom: 12px;
+  width: 100%;
+  background-color: #f4f6f9;
+  border: 1px solid #dcdde1;
+  outline: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form input:focus {
+  border: 1px solid #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+  background-color: #ffffff;
+}
+
+/* Two-column inputs (unchanged structure) */
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form .column input {
+  width: calc(100% / 2 - 6px);
+}
+
+/* Button */
+.form button {
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  padding: 12px 15px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background: linear-gradient(135deg, #2980b9, #8e44ad);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Terms */
+.card_terms {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+.card_terms input[type="checkbox"] {
+  accent-color: #3498db; /* modern checkbox color */
+}
+
+/* Links */
+.card a {
+  color: #3498db;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.2s;
+}
+
+.card a:hover {
+  color: #9b59b6;
+  text-decoration: underline;
+}
+
+/********************************************************************
+********************** MODERN CSS LOADER ****************************
+********************************************************************/
+
+.loader-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.6); /* darker transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px); /* adds modern blur effect */
+}
+
+/* Loader Spinner */
+.loader-spinner {
+  width: 80px;
+  height: 80px;
+  border: 6px solid transparent;
+  border-top: 6px solid #6c5ce7;  /* purple */
+  border-right: 6px solid #00cec9; /* teal */
+  border-radius: 50%;
+  animation: spin 1s linear infinite, glow 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Glow animation */
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(108, 92, 231, 0.6), 0 0 20px rgba(0, 206, 201, 0.6); }
+  to   { box-shadow: 0 0 20px rgba(108, 92, 231, 1), 0 0 40px rgba(0, 206, 201, 1); }
+}
+
+
+/*******************************************************
+********** CSS FOR HOME PAGE **************************
+********************************************************/
+
+.home-page {
+  background-color: #fdedec;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures page takes full viewport height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* takes remaining space */
+  width: 100%;
+  margin: 5px auto; /* centers content horizontally with small vertical margin */
+  padding: 10px;
+  gap: 10px; /* optional: space between child elements */
+  box-sizing: border-box;
+}
+
+
+/*******************************************************
+********** CSS FOR HEADER COMPONENT *******************
+********************************************************/
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;          /* allows items to wrap on smaller screens */
+  justify-content: space-between;
+  align-items: center;      /* vertically center content */
+  width: 100%;
+  padding: 10px 30px;
+  border-bottom: 1px solid #bbb;
+  box-sizing: border-box;
+  background-color: #fff;   /* optional: header background */
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  color: #28282B;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;    /* remove underline if it's a link */
+}
+
+i {
+  margin: 0 10px;
+  cursor: pointer;          /* indicates clickable icons */
+  color: #28282B;           /* default icon color */
+}
+
+.app-user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.logged-user-name {
+  color: #28282B;
+  font-weight: bold;
+  margin-left: 15px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.logged-user-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;       /* vertically centers initials */
+  cursor: pointer;
+  flex-shrink: 0;           /* prevents shrinking on small screens */
+}
+
+
+/*******************************************************
+********** SIDEBAR COMPONENT **************************
+********************************************************/
+
+.app-sidebar {
+  width: 30%;
+  min-width: 250px;
+  max-width: 350px;
+  height: 100vh;
+  padding: 20px 15px;
+  background-color: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+  overflow-y: auto; /* allows scrolling if content exceeds height */
+  transition: all 0.3s ease;
+}
+
+/* Smooth hover shadow for interactive feel */
+.app-sidebar:hover {
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar styling for modern look */
+.app-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.app-sidebar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Sidebar section headings (optional) */
+.sidebar-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Individual items inside sidebar */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 12px;
+  color: #28282B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #fde8e5;
+  color: #e74c3c;
+  transform: translateX(3px);
+}
+
+.sidebar-item.active {
+  background-color: #f0aca5;
+  color: #fff;
+  font-weight: bold;
+}
+
+.sidebar-item i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Optional: subtle separator between sections */
+.sidebar-separator {
+  height: 1px;
+  background-color: #eee;
+  margin: 10px 0;
+}
+
+
+
+/*******************************************************
+********** SEARCH COMPONENT (STICKY) ******************
+********************************************************/
+
+.user-search-area {
+  position: sticky;           /* keeps it at top */
+  top: 0;                     /* distance from top */
+  z-index: 10;                /* above scrolling content */
+  margin: 10px 10px 20px 10px;
+  background-color: #fff;     /* prevents overlap with scroll */
+  padding: 10px 0;            /* vertical spacing */
+  border-bottom: 1px solid #ddd; /* subtle separation */
+  box-sizing: border-box;
+}
+
+/* Input field */
+.user-search-text {
+  width: 100%;
+  height: 42px;
+  padding: 0 50px 0 20px;    /* padding-right for button space */
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #28282B;
+  outline: none;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.user-search-text::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.user-search-text:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+}
+
+/* Search button/icon inside input */
+.user-search-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #e74c3c;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.user-search-btn:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
+/*******************************************************
+********** CSS FOR USER LIST COMPONENT ****************
+********************************************************/
+
+/* Individual user item */
+.filtered-user,
+.selected-user {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  margin: 4px 0;
+}
+
+/* Default user item */
+.filtered-user {
+  background-color: #fff;
+  color: #28282B;
+}
+
+.filtered-user:hover {
+  background-color: #fde8e5;
+  color: #e74c3c;
+  transform: translateX(2px);
+}
+
+/* Selected/active user item */
+.selected-user {
+  background-color: #f6b9b2;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Container for avatar + details */
+.filter-user-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* User details */
+.filter-user-details {
+  flex: 1;
+  min-width: 0; /* prevents overflow on small screens */
+  overflow: hidden;
+}
+
+.user-display-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-display-email {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Avatar styles */
+.user-default-avatar,
+.user-profile-image,
+.user-selected-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-default-avatar {
+  background-color: #50e73c;
+  color: #ca5c5c;
+}
+
+.user-selected-avatar {
+  background-color: #55cf44;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+}
+
+/* Start chat section */
+.user-start-chat {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.user-start-chat-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-start-chat-btn:hover {
+  background-color: #782017;
+  transform: translateY(-1px);
+}
+
+
+/*******************************************************
+*************CSS STYLES FOR CHAT AREA**************
+********************************************************/
+
+.app-chat-area {
+  background-color: #ffffff;
+  width: 100%;
+  height: 90vh;                  /* full height minus header/sidebar */
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;           /* slightly more rounded corners */
+  padding: 20px 25px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* subtle shadow */
+  overflow: hidden;              /* prevents content overflow */
+}
+
+/*******************************************************
+*************CSS STYLES FOR CHAT AREA HEADER************
+********************************************************/
+.app-chat-area-header{
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    border-bottom: #bbb 1px solid;
+    text-align: right;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/*******************************************************
+******** CSS STYLES FOR CHAT AREA & INPUT **************
+********************************************************/
+
+/* Chat messages container */
+.main-chat-area {
+  flex: 1;
+  overflow-y: auto;                  /* smooth scrolling */
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;                         /* spacing between messages */
+  background-color: #fdfdfd;         /* subtle background */
+  border-radius: 10px;
+}
+
+/* Scrollbar styling */
+.main-chat-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main-chat-area::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.main-chat-area::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Message input container */
+.send-message-div {
+  position: relative;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* Input field */
+.send-message-input {
+  width: 100%;
+  padding: 10px 60px 10px 15px;      /* space for buttons inside */
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  color: #28282B;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.send-message-input:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.2);
+}
+
+/* Buttons inside input */
+.send-message-btn,
+.send-emoji-btn,
+.send-image-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #e74c3c;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.send-message-btn:hover,
+.send-emoji-btn:hover,
+.send-image-btn:hover {
+  color: #c0392b;
+  transform: scale(1.2);
+}
+
+/* Button positions */
+.send-message-btn { right: 10px; }
+.send-emoji-btn   { right: 50px; }
+.send-image-btn   { right: 90px; }
+
+/*****************************************************
+*********** CUSTOM SCROLLBAR FOR CHAT AREA ***********
+******************************************************/
+
+/* Scrollbar width */
+.main-chat-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.main-chat-area::-webkit-scrollbar-track {
+  background: transparent;          /* clean, minimal track */
+  border-radius: 10px;
+}
+
+/* Handle */
+.main-chat-area::-webkit-scrollbar-thumb {
+  background-color: rgba(231, 76, 60, 0.7); /* semi-transparent red */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+/* Handle on hover */
+.main-chat-area::-webkit-scrollbar-thumb:hover {
+  background-color: #e74c3c;        /* solid red on hover */
+}
+
+
+/*******************************************************
+***************CSS FOR CHAT MESSAGES********************
+********************************************************/
+.message-container {
+  display: flex;
+  justify-content: flex-start; /* default for received */
+  width: 100%; /* ensures container spans full row */
+}
+.send-message, .received-message{
+    padding: 10px 20px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.send-message {
+  background-color: #1a6320;
+  color: #fff;
+  align-self: flex-end;
+  margin-left: auto;           /* pushes bubble to right side */
+  border-radius: 18px;
+  border-top-right-radius: 4px;
+  padding: 10px 14px;
+  max-width: 70%;              /* bubble won’t cross screen */
+  min-width: 60px;
+  word-wrap: break-word;
+  position: relative;
+}
+
+
+
+.received-message {
+  background-color: #f1f1f1;
+  color: #28282B;
+  margin-right: auto;          /* keeps on left side */
+  border-radius: 18px;
+  border-top-left-radius: 4px;
+  padding: 10px 14px;
+  max-width: 70%;
+  min-width: 60px;
+  word-wrap: break-word;
+  position: relative;
+}
+.message-timestamp{
+  width: fit-content;
+  font-size: 13px;
+}
+.last-message-timestamp{
+  font-size: 13px;
+}
+
+
+/*****************************************************
+************ MEDIA QUERY FOR USER LIST ****************
+******************************************************/
+@media only screen and (max-width: 1000px) {
+  /* Hide less important info */
+  .filter-user-details,
+  .last-message-timestamp,
+  .user-search-area {
+    display: none;
+  }
+
+  /* Sidebar shrinks to icon view */
+  .app-sidebar {
+    width: 15%;
+    min-width: 60px;
+    transition: all 0.3s ease;
+  }
+
+  /* Chat area expands */
+  .app-chat-area {
+    width: 85%;
+    transition: all 0.3s ease;
+  }
+
+  /* Unread counter stays visible but smaller */
+  .unread-message-counter {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    padding-top: 2px;
+  }
+}
+
+/*****************************************************
+************ UNREAD MESSAGE COUNTER ******************
+******************************************************/
+.unread-message-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px; /* allows 2-3 digit numbers */
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 999px; /* makes it pill or circle */
+  background-color: #e74c3c;
+  color: white;
+  margin-left: auto;
+}
+
+/*****************************************************
+************ TYPING INDICATOR ************************
+******************************************************/
+.typing-indicator {
+  font-size: 13px;
+  color: grey;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+
+/*****************************************************
+*************CSS STYLES FOR PROFILE PAGE**************
+******************************************************/
+
+.profile-page-container{
+  display: flex;
+  width: 80%;
+  color: #28282B;
+  margin: 100px auto;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.profile-pic-container{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.profile-info-container{
+  width: 70%;
+  padding: 30px 10px;
+}
+.user-profile-pic-upload, .user-default-profile-avatar{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  color: #28282B;
+  border: #ddd 5px solid;
+  font-size: 120px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
+}
+
+.user-profile-name{
+  padding: 10px 0px;
+  border-bottom: #cdcdcd 1.5px solid;
+  margin-bottom: 30px;
+}
+.select-profile-pic-container{
+  padding: 30px 0px;
+}
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #28282B;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+  color: #28282B;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+  color: #28282B;
+}
+
+.logout-button{
+  background-color: transparent;
+  color:#e74c3c ;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
