@@ -12,12 +12,15 @@ const messageRouter = require('./controllers/messageController');
 const app = express();
 
 // Middleware
-app.use(cors({ 
+app.use(cors({
   origin: [
-    'http://localhost:3000', 
-    'https://chatsphere-client-kops.onrender.com'  // Add your frontend URL
-  ], 
-  methods: ['GET', 'POST'] 
+    'http://localhost:3000',
+    'https://chatsphere-client-pl8u.onrender.com', // ✅ Add this line
+    'https://chatsphere-client-kops.onrender.com'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'authorization'],
+  credentials: true
 }));
 app.use(express.json({ limit: '50mb' }));
 
