@@ -12,7 +12,13 @@ const messageRouter = require('./controllers/messageController');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:3000', methods: ['GET', 'POST'] }));
+app.use(cors({ 
+  origin: [
+    'http://localhost:3000', 
+    'https://chatsphere-client-kops.onrender.com'  // Add your frontend URL
+  ], 
+  methods: ['GET', 'POST'] 
+}));
 app.use(express.json({ limit: '50mb' }));
 
 // API routes
@@ -27,7 +33,10 @@ const server = http.createServer(app);
 // Socket.io setup
 const io = socketIO(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: [
+      'http://localhost:3000',
+      'https://chatsphere-client-kops.onrender.com'  // Add your frontend URL
+    ],
     methods: ['GET', 'POST'],
   },
 });

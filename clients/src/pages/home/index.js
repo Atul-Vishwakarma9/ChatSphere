@@ -5,7 +5,7 @@ import Sidebar from "./components/sidebar";
 import { io } from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://chatsphere-server-kops.onrender.com");
 
 function Home() {
   const { selectedChat, user } = useSelector(

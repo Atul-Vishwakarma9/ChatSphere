@@ -11,7 +11,7 @@
 import axios from "axios";
 
 // Local backend URL (no trailing slash)
-export const url = "http://localhost:5000";
+export const url = "https://chatsphere-server-kops.onrender.com";
 
 // Create Axios instance
 export const axiosInstance = axios.create({
